@@ -1,12 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import { Container, Button } from 'semantic-ui-react';
+import Routes from './Routes';
 
 const App = () => (
-	<Container>
-		<h1>React Dashboard</h1>
-		<Button>Enter Dashboard</Button>
-	</Container>
+	<Router>
+		<Routes/>
+	</Router>
 );
 
 export default App;
