@@ -1,12 +1,19 @@
 import React from 'react';
 
-import { Container, Header, Button } from 'semantic-ui-react';
+import { Container, Header, Segment } from 'semantic-ui-react';
 
-const Home = () => (
-	<Container fluid>
-		<Header as={'h1'}>React Dashboard</Header>
-		<Button>Enter Dashboard</Button>
-	</Container>
-);
+import MasterLayout from '../../templates/MasterLayout/MasterLayout';
+
+const Home = () => {
+	return (
+		<MasterLayout>
+			<Container as={'article'} fluid>
+				<Segment as={'section'} basic>
+					<Header as={'h1'}>Home</Header>
+				</Segment>
+			</Container>
+		</MasterLayout>
+	)
+};
 
 export default Home;
