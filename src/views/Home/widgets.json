@@ -4,6 +4,7 @@
       "columns": [
         {
           "responsive": {
+            "tablet": 8,
             "computer": 4
           },
           "cells": [
@@ -18,6 +19,7 @@
         },
         {
           "responsive": {
+            "tablet": 8,
             "computer": 4
           },
           "cells": [
@@ -33,6 +35,7 @@
         },
         {
           "responsive": {
+            "tablet": 8,
             "computer": 4
           },
           "cells": [
@@ -48,6 +51,7 @@
         },
         {
           "responsive": {
+            "tablet": 8,
             "computer": 4
           },
           "cells": [
