@@ -1,3 +1,7 @@
 {
-  "HOME": "Home"
+  "HOME": "Home",
+  "WIDGET.NEW_USERS": "New Users",
+  "WIDGET.TOTAL_ORDERS": "Total Orders",
+  "WIDGET.PRODUCTS_SOLD": "Products Sold",
+  "WIDGET.FOLLOWERS": "Followers"
 }

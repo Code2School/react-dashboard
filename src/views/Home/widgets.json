@@ -1,0 +1,67 @@
+{
+  "rows": [
+    {
+      "columns": [
+        {
+          "responsive": {
+            "computer": 4
+          },
+          "cells": [
+            {
+              "widget": "DashboardCounter",
+              "property": {
+                "title": "WIDGET.NEW_USERS",
+                "counter": 800
+              }
+            }
+          ]
+        },
+        {
+          "responsive": {
+            "computer": 4
+          },
+          "cells": [
+            {
+              "widget": "DashboardCounter",
+              "property": {
+                "title": "WIDGET.TOTAL_ORDERS",
+                "counter": 1000,
+                "color": "#f2711c"
+              }
+            }
+          ]
+        },
+        {
+          "responsive": {
+            "computer": 4
+          },
+          "cells": [
+            {
+              "widget": "DashboardCounter",
+              "property": {
+                "title": "WIDGET.PRODUCTS_SOLD",
+                "counter": 500,
+                "color": "#00b5ad"
+              }
+            }
+          ]
+        },
+        {
+          "responsive": {
+            "computer": 4
+          },
+          "cells": [
+            {
+              "widget": "DashboardCounter",
+              "property": {
+                "title": "WIDGET.FOLLOWERS",
+                "counter": 1200,
+                "color": "#6435c9"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

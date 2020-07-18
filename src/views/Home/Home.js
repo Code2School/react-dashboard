@@ -6,9 +6,12 @@ import { Container, Header, Segment } from 'semantic-ui-react';
 // Utils
 import useTranslator from '../../shared/hooks/Translator';
 import en from './translation.en';
+import widgetMapper from './widgets/widgets.mapper';
+import { rows } from './widgets';
 
 // Component
 import MasterLayout from '../../templates/MasterLayout/MasterLayout';
+import WidgetContentLoader from '../../shared/components/organisms.WidgetContentLoader/WidgetContentLoader';
 
 const Home = () => {
 	const { t } = useTranslator({
@@ -20,11 +23,12 @@ const Home = () => {
 			}
 		]
 	});
+
 	return (
 		<MasterLayout>
 			<Container as={'article'} fluid>
 				<Segment as={'section'} basic>
-					<Header as={'h1'}>{t('HOME')}</Header>
+					<WidgetContentLoader rows={rows} mapper={widgetMapper}/>
 				</Segment>
 			</Container>
 		</MasterLayout>
