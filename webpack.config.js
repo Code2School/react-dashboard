@@ -77,7 +77,7 @@ module.exports = (env, argv) => {
 				},
 			]
 		},
-		resolve: {extensions: ["*", ".js", ".jsx"]},
+		resolve: {extensions: ["*", ".js", ".jsx", ".json"]},
 		devServer: {
 			host: '0.0.0.0',
 			port: 3000
