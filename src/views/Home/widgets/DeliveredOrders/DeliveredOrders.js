@@ -7,7 +7,7 @@ import axios from 'axios';
 
 // Utils
 import classes from './DeliveredOrders.module.less';
-import { isMobile } from '../../../../shared/utils/deviceDetector';
+import { isMobileOnly } from '../../../../shared/utils/deviceDetector';
 
 // Components
 import Widget from '../../../../shared/components/molecules.Widget/Widget';
@@ -50,16 +50,18 @@ const DeliveredOrders = ({ height }) => {
             <Widget.Header>
                 Delivered Orders
             </Widget.Header>
-            <Widget.Content style={{ height }}>
+            <Widget.Content style={{
+                height: isMobileOnly() ? `${parseInt(height)*2/3}rem` : height
+            }}>
                 <Grid columns={'equal'} padded>
                     <Grid.Row as={'section'}>
                         <Grid.Column as={'aside'} textAlign={'center'}>
                             <label>Total Delivered</label>
-                            { record.totalDelivered && (<p>{record.totalDelivered}</p>) }
+                            { record.totalDelivered && (<p className={classes.totalDelivered}>{record.totalDelivered}</p>) }
                         </Grid.Column>
                         <Grid.Column as={'aside'} textAlign={'center'}>
                             <label>Total Estimated</label>
-                            { record.totalEstimated && (<p>{record.totalEstimated}</p>) }
+                            { record.totalEstimated && (<p className={classes.totalEstimated}>{record.totalEstimated}</p>) }
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
@@ -70,7 +72,7 @@ const DeliveredOrders = ({ height }) => {
                             data={record.data}
                             keys={['Delivered', 'Estimated']}
                             indexBy="month"
-                            margin={{ top: 10, right: 0, bottom: 90, left: 30 }}
+                            margin={{ top: 10, right: 0, bottom: 50, left: 30 }}
                             padding={0.3}
                             groupMode="grouped"
                             colors={['rgb(8, 81, 156)', 'rgb(198, 219, 239)']}
@@ -100,7 +102,7 @@ const DeliveredOrders = ({ height }) => {
                             axisBottom={{
                                 tickSize: 0,
                                 tickPadding: 10,
-                                tickRotation: isMobile() ? -45 : 0,
+                                tickRotation: isMobileOnly() ? -45 : 0,
                                 legend: '',
                                 legendPosition: 'middle',
                                 legendOffset: 32

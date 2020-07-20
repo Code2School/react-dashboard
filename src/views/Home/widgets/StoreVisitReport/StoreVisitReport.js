@@ -5,7 +5,7 @@ import { ResponsiveLine } from '@nivo/line';
 import axios from 'axios';
 
 // Utils
-import { isMobile } from '../../../../shared/utils/deviceDetector';
+import { isMobileOnly } from '../../../../shared/utils/deviceDetector';
 
 // Components
 import Widget from '../../../../shared/components/molecules.Widget/Widget';
@@ -62,12 +62,14 @@ const StoreVisitReport = ({ height }) => {
             <Widget.Header>
                 Online Store Visitors
             </Widget.Header>
-            <Widget.Content style={{ height }}>
+            <Widget.Content style={{
+                height: isMobileOnly() ? `${parseInt(height)*2/3}rem` : height
+            }}>
                 {
                     record.data &&
                     <ResponsiveLine
                         data={record.data}
-                        margin={{ top: 20, right: 30, bottom: 70, left: 30 }}
+                        margin={{ top: 20, right: 30, bottom: 50, left: 30 }}
                         xScale={{ type: 'point' }}
                         yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: true, reverse: false }}
                         curve="natural"
@@ -77,7 +79,7 @@ const StoreVisitReport = ({ height }) => {
                             orient: 'bottom',
                             tickSize: 0,
                             tickPadding: 10,
-                            tickRotation: isMobile() ? -45 : 0,
+                            tickRotation: isMobileOnly() ? -45 : 0,
                             legend: '',
                             legendOffset: 36,
                             legendPosition: 'middle'

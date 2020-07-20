@@ -1,3 +1,18 @@
 .chartContent {
-  height: calc(100% - 3rem);
+  height: calc(100% - 6rem);
+}
+
+.totalValue {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.totalDelivered {
+  &:extend(.totalValue);
+  color: rgb(8, 81, 156);
+}
+
+.totalEstimated {
+  &:extend(.totalValue);
+  color: rgb(168, 200, 230);
 }
