@@ -66,6 +66,36 @@
           ]
         }
       ]
+    },
+    {
+      "columns": [
+        {
+          "responsive": {
+            "computer": 8
+          },
+          "cells": [
+            {
+              "widget": "StoreVisitReport",
+              "property": {
+                "height": "20rem"
+              }
+            }
+          ]
+        },
+        {
+          "responsive": {
+            "computer": 8
+          },
+          "cells": [
+            {
+              "widget": "DeliveredOrders",
+              "property": {
+                "height": "20rem"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

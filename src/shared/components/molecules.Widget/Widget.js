@@ -1,27 +1,38 @@
 import React from 'react';
 
+// Libs
 import { Card } from 'semantic-ui-react';
+import cx from 'classnames';
+
+// Utils
+import classes from './Widget.module.less';
 
 const Widget = ({ className, children }) => (
     <Card
         as={'article'}
-        className={className}
+        className={cx(className, classes.Widget)}
         fluid>
-        {children}
+        <Card.Content
+            as={'section'}
+            className={className}>
+            {children}
+        </Card.Content>
     </Card>
 );
 
-export const WidgetHeader = React.memo(({ className, children }) => (
+export const WidgetHeader = React.memo(({ className, style, children }) => (
     <Card.Header
-        as={'h2'}
-        className={className}>
+        as={'h3'}
+        className={className}
+        style={style}>
         {children}
     </Card.Header>
 ));
-export const WidgetContent = React.memo(({ className, children }) => (
+export const WidgetContent = React.memo(({ className, style, children }) => (
     <Card.Content
         as={'section'}
-        className={className}>
+        className={className}
+        style={style}>
         {children}
     </Card.Content>
 ));
