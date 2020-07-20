@@ -20,7 +20,8 @@ const MainNavigation = ({ className, vertical = true, menus = [], activeItem, me
             vertical={vertical}
             inverted
             widths={menus.length}
-            attached>
+            attached
+            borderless>
 
             {
                 menus.length > 0 &&

@@ -12,7 +12,7 @@ const MainHeader = () => (
     <Menu
         as={'header'}
         size='massive'
-        fixed={'top'}
+        attached
         className={classes.MainHeader}
         inverted
         borderless>

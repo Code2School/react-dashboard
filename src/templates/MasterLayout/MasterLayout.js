@@ -64,7 +64,7 @@ const MasterLayout = ({children}) => {
 	}, []);
 
 	return (
-		<>
+		<div className={classes.MasterLayout}>
 			<MainHeader/>
 			<main
 				className={cx(classes.mainSection, classes[navPosition])}>
@@ -80,7 +80,7 @@ const MasterLayout = ({children}) => {
 					{children}
 				</div>
 			</main>
-		</>
+		</div>
 	)
 };
 
