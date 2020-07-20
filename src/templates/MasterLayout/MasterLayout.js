@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import cx from 'classnames';
 
@@ -11,6 +12,38 @@ import MainNavigation from '../../shared/components/organisms.MainNavigation/Mai
 const MasterLayout = ({children}) => {
 	const [navPosition, setNavPosition] = useState('left');
 	const [navVertical, setNavVertical] = useState(true);
+	const location = useLocation();
+
+	const navigations = [
+		{
+			id: 'home',
+			title: 'Home',
+			icon: 'home',
+			to: '/'
+		},
+		{
+			id: 'notifications',
+			title: 'Notifications',
+			icon: 'bell'
+		},
+		{
+			id: 'settings',
+			title: 'Settings',
+			icon: 'setting',
+			to: '/settings'
+		},
+		{
+			id: 'logout',
+			title: 'Logout',
+			icon: 'sign-out',
+		}
+	];
+
+	const [activeNavigation, setActiveNavigation] = useState(navigations[0]);
+
+	const handleMenuActivated = (item = {}) => {
+		setActiveNavigation(navigations.find(navigationItem => navigationItem.to === location.pathname));
+	}
 
 	useEffect(() => {
 
@@ -26,6 +59,8 @@ const MasterLayout = ({children}) => {
 			setNavPosition('bottom');
 		}
 
+		handleMenuActivated();
+
 	}, []);
 
 	return (
@@ -33,8 +68,11 @@ const MasterLayout = ({children}) => {
 			<MainHeader/>
 			<MainNavigation
 				className={cx(classes.mainNav, classes[navPosition])}
+				menus={navigations}
+				activeItem={activeNavigation}
 				position={navPosition}
-				vertical={navVertical}/>
+				vertical={navVertical}
+				menuActived={handleMenuActivated}/>
 			<main
 				className={cx(classes.mainSection, classes[navPosition])}>
 				{children}

@@ -1,47 +1,45 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
+// Libs
 import { Menu, Icon } from 'semantic-ui-react';
+import cx from 'classnames';
 
-const MainNavigation = ({className, position = 'left', vertical = true}) => {
-	const [activeItem, setActiveItem] = useState('home');
+// Utils
+import classes from './MainNavigation.module.less';
 
-	const handleItemClick = (item) => setActiveItem(item);
+const MainNavigation = ({ className, position = 'left', vertical = true, menus = [], activeItem, menuActived }) => {
+    const handleItemClick = (item) => menuActived(item)
 
-	return (
-		<Menu
-			as={'nav'}
-			className={className}
-			icon='labeled'
-			compact
-			vertical={vertical}
-			inverted
-			widths={3}
-			fixed={position}>
-			<Menu.Item
-				name='home'
-				active={activeItem === 'home'}
-				onClick={() => handleItemClick('home')}>
-				<Icon name='home'/>
-				Home
-			</Menu.Item>
+    return (
+        <Menu
+            as={'nav'}
+            className={cx(className, classes.MainNavigation)}
+            icon='labeled'
+            compact
+            vertical={vertical}
+            inverted
+            widths={menus.length}
+            fixed={position}>
 
-			<Menu.Item
-				name='notifications'
-				active={activeItem === 'notifications'}
-				onClick={() => handleItemClick('notifications')}>
-				<Icon name='bell'/>
-				Notifications
-			</Menu.Item>
-
-			<Menu.Item
-				name='settings'
-				active={activeItem === 'settings'}
-				onClick={() => handleItemClick('settings')}>
-				<Icon name='setting'/>
-				Settings
-			</Menu.Item>
-		</Menu>
-	);
+            {
+                menus.length > 0 &&
+                menus.map(({ id, title, icon, to }) => (
+					<Menu.Item
+						as={Link}
+						to={to || '#'}
+						key={id}
+						name={id}
+						active={activeItem.id === id}
+						className={classes.menuItem}
+						onClick={() => handleItemClick({ id, title, icon, to })}>
+						<Icon name={icon}/>
+						{title}
+					</Menu.Item>
+                ))
+            }
+        </Menu>
+    );
 }
 
 export default MainNavigation;
