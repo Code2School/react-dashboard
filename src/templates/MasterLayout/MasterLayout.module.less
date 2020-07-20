@@ -1,38 +1,26 @@
 @header-height: 5rem;
-@nav-width: 6rem;
-@nav-height: 5rem;
-
-.mobileMainAlign {
-  width: 100%;
-  height: calc(100% - (@header-height + @nav-height));
-}
-
-.mainNav {
-  transform: translateY(5rem);
-  max-height: calc(100% - 5rem);
-
-  &.bottom {
-    transform: translateY(0);
-  }
-
-}
 
 .mainSection {
   position: fixed;
-  transform: translate(@nav-width, @header-height);
-  width: calc(100% - @nav-width);
+  transform: translateY(@header-height);
+  width: 100%;
   height: calc(100% - @header-height);
-  overflow-y: scroll;
+  display: flex;
 
   &.top {
-    &:extend(.mobileMainAlign);
-    transform: translateY(@header-height + @nav-height);
+    flex-direction: column;
   }
 
   &.bottom {
-    &:extend(.mobileMainAlign);
-    transform: translateY(@header-height);
+    flex-direction: column-reverse;
   }
 
+  .pageContent {
+    overflow-y: auto;
+  }
+
+  .mainNav {
+    min-height: auto;
+  }
 
 }

@@ -22,9 +22,12 @@ const MainHeader = () => (
         }}>
             <Logo/>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item className={classes.userInfo}>
             <Avatar image={avatar}/>
-			<span>Barry Allen</span>
+			<aside>
+                <div className={classes.name}>Barry Allen</div>
+                <div className={classes.role}>Admin</div>
+            </aside>
         </Menu.Item>
     </Menu>
 );

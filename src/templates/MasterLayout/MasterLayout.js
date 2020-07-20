@@ -66,16 +66,19 @@ const MasterLayout = ({children}) => {
 	return (
 		<>
 			<MainHeader/>
-			<MainNavigation
-				className={cx(classes.mainNav, classes[navPosition])}
-				menus={navigations}
-				activeItem={activeNavigation}
-				position={navPosition}
-				vertical={navVertical}
-				menuActived={handleMenuActivated}/>
 			<main
 				className={cx(classes.mainSection, classes[navPosition])}>
-				{children}
+				<MainNavigation
+					className={classes.mainNav}
+					menus={navigations}
+					activeItem={activeNavigation}
+					position={navPosition}
+					vertical={navVertical}
+					menuActived={handleMenuActivated}/>
+				<div
+					className={classes.pageContent}>
+					{children}
+				</div>
 			</main>
 		</>
 	)

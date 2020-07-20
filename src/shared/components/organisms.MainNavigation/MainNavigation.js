@@ -8,7 +8,7 @@ import cx from 'classnames';
 // Utils
 import classes from './MainNavigation.module.less';
 
-const MainNavigation = ({ className, position = 'left', vertical = true, menus = [], activeItem, menuActived }) => {
+const MainNavigation = ({ className, vertical = true, menus = [], activeItem, menuActived }) => {
     const handleItemClick = (item) => menuActived(item)
 
     return (
@@ -20,7 +20,7 @@ const MainNavigation = ({ className, position = 'left', vertical = true, menus =
             vertical={vertical}
             inverted
             widths={menus.length}
-            fixed={position}>
+            attached>
 
             {
                 menus.length > 0 &&
