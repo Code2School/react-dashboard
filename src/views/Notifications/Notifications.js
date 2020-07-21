@@ -11,7 +11,7 @@ import ryanAvatar from '../../assets/ryanGosling-avatar.jpg';
 
 // Components
 import MasterLayout from '../../templates/MasterLayout/MasterLayout';
-import NotificationList from './component/NotificationList/NotificationList';
+import NotificationList from './components/NotificationList/NotificationList';
 
 const Notifications = () => {
     const notifications = [
