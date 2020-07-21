@@ -24,7 +24,8 @@ const MasterLayout = ({children}) => {
 		{
 			id: 'notifications',
 			title: 'Notifications',
-			icon: 'bell'
+			icon: 'bell',
+			to: '/notifications'
 		},
 		{
 			id: 'settings',

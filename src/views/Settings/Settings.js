@@ -43,7 +43,7 @@ const Settings = () => {
                         <Grid.Row>
                             <Grid.Column
                                 mobile={16}
-                                computer={9}>
+                                computer={10}>
                                 <Segment>
                                     <Header as={'h2'}>{t('SETTINGS')}</Header>
 
@@ -61,7 +61,7 @@ const Settings = () => {
                             </Grid.Column>
                             <Grid.Column
                                 mobile={16}
-                                computer={7}>
+                                computer={6}>
                                 <Segment>
                                     <Header as={'h2'}>{t('PROFILE_PICTURE')}</Header>
                                     <Item className={classes.avatarContainer}>
