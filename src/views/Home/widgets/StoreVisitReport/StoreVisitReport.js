@@ -9,8 +9,19 @@ import { isMobileOnly } from '../../../../shared/utils/deviceDetector';
 
 // Components
 import Widget from '../../../../shared/components/molecules.Widget/Widget';
+import useTranslator from '../../../../shared/hooks/Translator';
+import en from '../../translation.en';
 
 const StoreVisitReport = ({ height }) => {
+    const { t } = useTranslator({
+        name: 'home',
+        config: [
+            {
+                lang: 'en',
+                resource: en
+            }
+        ]
+    });
     const [record, setRecord] = useState({});
     const initData = async () => {
         try {
@@ -60,7 +71,7 @@ const StoreVisitReport = ({ height }) => {
     return (
         <Widget>
             <Widget.Header>
-                Online Store Visitors
+                {t('WIDGET.ONLINE_STORE_VISITORS')}
             </Widget.Header>
             <Widget.Content style={{
                 height: isMobileOnly() ? `${parseInt(height)*2/3}rem` : height

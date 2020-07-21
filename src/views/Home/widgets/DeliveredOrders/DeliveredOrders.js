@@ -8,11 +8,22 @@ import axios from 'axios';
 // Utils
 import classes from './DeliveredOrders.module.less';
 import { isMobileOnly } from '../../../../shared/utils/deviceDetector';
+import useTranslator from '../../../../shared/hooks/Translator';
+import en from '../../translation.en';
 
 // Components
 import Widget from '../../../../shared/components/molecules.Widget/Widget';
 
 const DeliveredOrders = ({ height }) => {
+    const { t } = useTranslator({
+        name: 'home',
+        config: [
+            {
+                lang: 'en',
+                resource: en
+            }
+        ]
+    });
     const [record, setRecord] = useState({});
 
     const initData = async () => {
@@ -48,7 +59,7 @@ const DeliveredOrders = ({ height }) => {
     return (
         <Widget>
             <Widget.Header>
-                Delivered Orders
+                {t('WIDGET.DELIVERED_ORDERS')}
             </Widget.Header>
             <Widget.Content style={{
                 height: isMobileOnly() ? `${parseInt(height)*2/3}rem` : height
@@ -56,11 +67,11 @@ const DeliveredOrders = ({ height }) => {
                 <Grid columns={'equal'} padded>
                     <Grid.Row as={'section'}>
                         <Grid.Column as={'aside'} textAlign={'center'}>
-                            <label>Total Delivered</label>
+                            <label>{t('WIDGET.TOTAL_DELIVERED')}</label>
                             { record.totalDelivered && (<p className={classes.totalDelivered}>{record.totalDelivered}</p>) }
                         </Grid.Column>
                         <Grid.Column as={'aside'} textAlign={'center'}>
-                            <label>Total Estimated</label>
+                            <label>{t('WIDGET.TOTAL_ESTIMATED')}</label>
                             { record.totalEstimated && (<p className={classes.totalEstimated}>{record.totalEstimated}</p>) }
                         </Grid.Column>
                     </Grid.Row>

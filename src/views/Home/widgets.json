@@ -12,7 +12,8 @@
               "widget": "DashboardCounter",
               "property": {
                 "title": "WIDGET.NEW_USERS",
-                "counter": 800
+                "counter": 800,
+                "color": "blue"
               }
             }
           ]
@@ -28,7 +29,7 @@
               "property": {
                 "title": "WIDGET.TOTAL_ORDERS",
                 "counter": 1000,
-                "color": "#f2711c"
+                "color": "orange"
               }
             }
           ]
@@ -44,7 +45,7 @@
               "property": {
                 "title": "WIDGET.PRODUCTS_SOLD",
                 "counter": 500,
-                "color": "#00b5ad"
+                "color": "teal"
               }
             }
           ]
@@ -60,7 +61,7 @@
               "property": {
                 "title": "WIDGET.FOLLOWERS",
                 "counter": 1200,
-                "color": "#6435c9"
+                "color": "violet"
               }
             }
           ]

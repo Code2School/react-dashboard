@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+// Libs
+import { Statistic } from 'semantic-ui-react';
+
 // Utils
 import classes from './DashboardCounter.module.less';
 import useTranslator from '../../../../shared/hooks/Translator';
@@ -33,11 +36,11 @@ const DashboardCounter = ({ title, counter: initCounter, counterLimit, color }) 
     }, [counter]);
 
     return (
-        <Widget className={classes.DashboardCounter}>
-            <Widget.Content className={classes.contentLayout}>
-                <h3 className={classes.header}>{t(title)}</h3>
-                <p style={{ color }}>{counter.toLocaleString()}</p>
-            </Widget.Content>
+        <Widget className={classes.DashboardCounter} textAlign={'center'}>
+            <Statistic size='large' color={color}>
+                <Statistic.Label as={'h3'}>{t(title)}</Statistic.Label>
+                <Statistic.Value as={'p'}>{counter.toLocaleString()}</Statistic.Value>
+            </Statistic>
         </Widget>
     );
 }

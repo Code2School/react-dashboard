@@ -3,5 +3,9 @@
   "WIDGET.NEW_USERS": "New Users",
   "WIDGET.TOTAL_ORDERS": "Total Orders",
   "WIDGET.PRODUCTS_SOLD": "Products Sold",
-  "WIDGET.FOLLOWERS": "Followers"
+  "WIDGET.FOLLOWERS": "Followers",
+  "WIDGET.TOTAL_DELIVERED": "Total Delivered",
+  "WIDGET.TOTAL_ESTIMATED": "Total Estimated",
+  "WIDGET.DELIVERED_ORDERS": "Delivered Orders",
+  "WIDGET.ONLINE_STORE_VISITORS": "Online Store Visitors"
 }

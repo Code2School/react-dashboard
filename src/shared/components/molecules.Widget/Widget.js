@@ -7,14 +7,15 @@ import cx from 'classnames';
 // Utils
 import classes from './Widget.module.less';
 
-const Widget = ({ className, children }) => (
+const Widget = ({ className, children, textAlign = 'left' }) => (
     <Card
         as={'article'}
         className={cx(className, classes.Widget)}
         fluid>
         <Card.Content
             as={'section'}
-            className={className}>
+            className={className}
+            textAlign={textAlign}>
             {children}
         </Card.Content>
     </Card>
