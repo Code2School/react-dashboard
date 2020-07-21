@@ -1,3 +1,25 @@
 {
-  "SETTINGS": "Settings"
+  "SETTINGS": "Settings",
+  "PROFILE_PICTURE": "Profile picture",
+  "GENERAL_SETTINGS": "General Settings",
+  "PERSONAL_DETAILS": "Personal Details",
+  "FORM.LANGUAGE": "Language",
+  "FORM.LANGUAGE_PLACEHOLDER": "Select Language",
+  "FORM.TIME_ZONE": "Time zone",
+  "FORM.TIME_ZONE_PLACEHOLDER": "Select Time zone",
+  "FORM.WORK_HOURS": "Work hours",
+  "FORM.FROM": "From",
+  "FORM.TO": "To",
+  "FORM.FIRST_NAME": "First Name",
+  "FORM.LAST_NAME": "Last Name",
+  "FORM.FIRST_NAME_PLACEHOLDER": "Enter your first name",
+  "FORM.LAST_NAME_PLACEHOLDER": "Enter your last name",
+  "FORM.GENDER": "Gender",
+  "FORM.GENDER_PLACEHOLDER": "Select Gender",
+  "FORM.EMAIL": "Email",
+  "FORM.EMAIL_PLACEHOLDER": "Enter your email",
+  "FORM.PHONE": "Phone number",
+  "FORM.PHONE_PLACEHOLDER": "Enter your phone number",
+  "FORM.LOCATION": "Location",
+  "FORM.LOCATION_PLACEHOLDER": "Enter your home address"
 }

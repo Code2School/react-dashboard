@@ -2,14 +2,16 @@ import React from 'react';
 
 // Libs
 import { Image } from 'semantic-ui-react';
+import cx from 'classnames';
 
 // Utils
 import classes from './Avatar.module.less';
 
-const Avatar = ({ image }) => (
+const Avatar = ({ image, size = 'mini' }) => (
 	<Image
 		src={image}
-		className={classes.Avatar}
+		className={cx(classes.Avatar, { [classes.smallBorder]: size === 'mini' })}
+		size={size}
 		avatar
 		spaced/>
 );

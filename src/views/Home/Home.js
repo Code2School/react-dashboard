@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Libs
-import { Container, Header, Segment } from 'semantic-ui-react';
+import { Container, Segment } from 'semantic-ui-react';
 
 // Utils
 import useTranslator from '../../shared/hooks/Translator';
