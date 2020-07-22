@@ -41,6 +41,7 @@ const Settings = () => {
                 <Segment as={'section'} basic>
                     <Grid columns={2}>
                         <Grid.Row>
+                            {/* start main settings */}
                             <Grid.Column
                                 mobile={16}
                                 computer={10}>
@@ -59,6 +60,9 @@ const Settings = () => {
 
                                 </Segment>
                             </Grid.Column>
+                            {/* end main settings */}
+
+                            {/* start profile picture */}
                             <Grid.Column
                                 mobile={16}
                                 computer={6}>
@@ -71,6 +75,7 @@ const Settings = () => {
                                     </Item>
                                 </Segment>
                             </Grid.Column>
+                            {/* end profile picture */}
                         </Grid.Row>
                     </Grid>
                 </Segment>

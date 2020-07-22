@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Menu, Header } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 
 import classes from './MainHeader.module.less';
 import avatar from '../../../assets/barryAllen-avatar.jpg';
@@ -17,14 +17,14 @@ const MainHeader = () => (
         inverted
         borderless>
         <Menu.Item as={'h2'} style={{
-        	marginBottom: 0,
-			flex: 1
+            marginBottom: 0,
+            flex: 1
         }}>
             <Logo/>
         </Menu.Item>
         <Menu.Item className={classes.userInfo}>
             <Avatar image={avatar}/>
-			<aside>
+            <aside>
                 <div className={classes.name}>Barry Allen</div>
                 <div className={classes.role}>Admin</div>
             </aside>

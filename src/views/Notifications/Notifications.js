@@ -1,10 +1,13 @@
 import React from 'react';
 
 // Libs
-import { Container, Header, Item, Image, Segment, Label, Icon, Divider, Menu } from 'semantic-ui-react';
+import {
+    Container,
+    Header,
+    Segment,
+} from 'semantic-ui-react';
 
 // Utils
-import classes from './Notifications.module.less';
 import ciscoAvatar from '../../assets/ciscoRamon-avatar.jpg';
 import caitlinAvatar from '../../assets/caitlinSnow-avatar.jpg';
 import ryanAvatar from '../../assets/ryanGosling-avatar.jpg';
@@ -77,7 +80,7 @@ const Notifications = () => {
                 <Segment as={'section'} basic>
                     <Segment>
                         <Header as={'h2'}>Notifications</Header>
-                        <NotificationList notifications={notifications} />
+                        <NotificationList notifications={notifications}/>
                     </Segment>
                 </Segment>
             </Container>

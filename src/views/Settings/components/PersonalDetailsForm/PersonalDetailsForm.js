@@ -28,14 +28,14 @@ const PersonalDetailsForm = () => {
                     placeholder={t('FORM.FIRST_NAME_PLACEHOLDER')}
                     value={'Barry'}
                     inline
-                    fluid />
+                    fluid/>
 
                 <Form.Input
                     label={t('FORM.LAST_NAME')}
                     placeholder={t('FORM.LAST_NAME_PLACEHOLDER')}
                     value={'Allen'}
                     inline
-                    fluid />
+                    fluid/>
             </Form.Group>
             <Form.Group inline>
                 <Form.Select
@@ -43,13 +43,13 @@ const PersonalDetailsForm = () => {
                     options={genderOptions}
                     placeholder={t('FORM.GENDER_PLACEHOLDER')}
                     value={'male'}
-                    fluid />
+                    fluid/>
                 <Form.Input
                     label={t('FORM.EMAIL')}
                     placeholder={t('FORM.EMAIL_PLACEHOLDER')}
                     value={'barry.allen@gmail.com'}
                     inline
-                    fluid />
+                    fluid/>
 
             </Form.Group>
             <Form.Group inline>
@@ -58,13 +58,13 @@ const PersonalDetailsForm = () => {
                     placeholder={t('FORM.PHONE_PLACEHOLDER')}
                     value={'001652432344'}
                     inline
-                    fluid />
+                    fluid/>
                 <Form.Input
                     label={t('FORM.LOCATION')}
                     placeholder={t('FORM.LOCATION_PLACEHOLDER')}
                     value={'USA, New York'}
                     inline
-                    fluid />
+                    fluid/>
 
             </Form.Group>
         </Form>

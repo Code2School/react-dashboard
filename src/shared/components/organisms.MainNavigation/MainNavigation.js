@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Libs
@@ -26,17 +26,17 @@ const MainNavigation = ({ className, vertical = true, menus = [], activeItem, me
             {
                 menus.length > 0 &&
                 menus.map(({ id, title, icon, to }) => (
-					<Menu.Item
-						as={Link}
-						to={to || '#'}
-						key={id}
-						name={id}
-						active={activeItem.id === id}
-						className={classes.menuItem}
-						onClick={() => handleItemClick({ id, title, icon, to })}>
-						<Icon name={icon}/>
-						{title}
-					</Menu.Item>
+                    <Menu.Item
+                        as={Link}
+                        to={to || '#'}
+                        key={id}
+                        name={id}
+                        active={activeItem.id === id}
+                        className={classes.menuItem}
+                        onClick={() => handleItemClick({ id, title, icon, to })}>
+                        <Icon name={icon}/>
+                        {title}
+                    </Menu.Item>
                 ))
             }
         </Menu>
