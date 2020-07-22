@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path')
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8000;
 const server = express();
 
 server.use(express.static(path.join(__dirname, 'dist')));

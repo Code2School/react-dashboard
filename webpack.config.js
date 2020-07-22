@@ -83,7 +83,7 @@ module.exports = (env, argv) => {
 			port: 3000,
 			historyApiFallback: true,
 			proxy: {
-				'/api': 'http://localhost:3001'
+				'/api': 'http://localhost:8000'
 			}
 		},
 		plugins: [
