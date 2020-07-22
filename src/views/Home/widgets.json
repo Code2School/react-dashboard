@@ -97,6 +97,36 @@
           ]
         }
       ]
+    },
+    {
+      "columns": [
+        {
+          "responsive": {
+            "computer": 8
+          },
+          "cells": [
+            {
+              "widget": "VisitSeparation",
+              "property": {
+                "height": "25rem"
+              }
+            }
+          ]
+        },
+        {
+          "responsive": {
+            "computer": 8
+          },
+          "cells": [
+            {
+              "widget": "NotificationsCard",
+              "property": {
+                "height": "37.6rem"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

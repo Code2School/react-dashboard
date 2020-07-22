@@ -44,6 +44,32 @@ server.get('/api/orders', (req, res) => {
 	})
 });
 
+// Device Visit
+server.get('/api/devices/visit', (req, res) => {
+	res.json([
+		{
+			id: 'mobile',
+			label: 'Mobile',
+			value: Math.ceil(Math.random() * 1000),
+		},
+		{
+			id: 'tablet',
+			label: 'Tablet',
+			value: Math.ceil(Math.random() * 1000),
+		},
+		{
+			id: 'desktop',
+			label: 'Desktop',
+			value: Math.ceil(Math.random() * 1000),
+		},
+		{
+			id: 'other',
+			label: 'Other',
+			value: Math.ceil(Math.random() * 1000),
+		}
+	])
+});
+
 server.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });

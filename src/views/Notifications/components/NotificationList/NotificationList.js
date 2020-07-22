@@ -11,11 +11,12 @@ import classes from './NotificationList.module.less';
 import Avatar from '../../../../shared/components/atom.Avatar/Avatar';
 
 
-const NotificationList = ({ notifications }) => (
+const NotificationList = ({ notifications, limit }) => (
     <Item.Group as={'article'}>
         {
             notifications.length > 0 &&
             notifications
+                .slice(0, limit)
                 .map((
                     {
                         avatar,
@@ -25,7 +26,8 @@ const NotificationList = ({ notifications }) => (
                         creationDate,
                         unread
                     },
-                    index
+                    index,
+                    arr
                 ) => (
                     <Item.Group
                         key={index}
@@ -67,7 +69,7 @@ const NotificationList = ({ notifications }) => (
                             </Item.Content>
                         </Item>
                         {
-                            index < notifications.length - 1 &&
+                            index < arr.length - 1 &&
                             <Divider fitted/>
                         }
                     </Item.Group>
