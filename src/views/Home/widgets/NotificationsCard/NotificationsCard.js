@@ -1,6 +1,5 @@
 import React from 'react';
-
-// Libs
+import { Link } from 'react-router-dom';
 
 // Utils
 import ciscoAvatar from '../../../../assets/ciscoRamon-avatar.jpg';
@@ -10,8 +9,19 @@ import ryanAvatar from '../../../../assets/ryanGosling-avatar.jpg';
 // Components
 import NotificationList from '../../../Notifications/components/NotificationList/NotificationList';
 import Widget from '../../../../shared/components/molecules.Widget/Widget';
+import useTranslator from '../../../../shared/hooks/Translator';
+import en from '../../translation.en';
 
 const NotificationsCard = () => {
+    const { t } = useTranslator({
+        name: 'home',
+        config: [
+            {
+                lang: 'en',
+                resource: en
+            }
+        ]
+    });
     const notifications = [
         {
             avatar: ciscoAvatar,
@@ -68,10 +78,17 @@ const NotificationsCard = () => {
             creationDate: '3 Aug 2019 at 4:23 PM',
             unread: true
         },
-    ]
+    ];
+
+    const headerAction = (
+        <Link to={'/notifications'}>{t('WIDGET.VIEW_MORE')}</Link>
+    );
     return (
         <Widget>
-            <Widget.Header>Notifications</Widget.Header>
+            <Widget.Header
+                headerAddition={headerAction}>
+                {t('WIDGET.NOTIFICATIONS')}
+            </Widget.Header>
             <Widget.Content>
                 <NotificationList notifications={notifications} limit={3} />
             </Widget.Content>

@@ -1,14 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Form } from 'semantic-ui-react';
 import useTranslator from '../../../../shared/hooks/Translator';
 import en from '../../translation.en';
-
-const genderOptions = [
-    { key: 'male', value: 'male', text: 'Male' },
-    { key: 'female', value: 'female', text: 'Female' },
-    { key: 'other', value: 'other', text: 'Other' },
-]
 
 const PersonalDetailsForm = () => {
     const { t } = useTranslator({
@@ -20,6 +14,14 @@ const PersonalDetailsForm = () => {
             }
         ]
     });
+    const genderOptions = [
+        { key: 'male', value: 'male', text: 'Male' },
+        { key: 'female', value: 'female', text: 'Female' },
+        { key: 'other', value: 'other', text: 'Other' },
+    ]
+    const [gender, setGender] = useState('male');
+    const handleGenderSelect = (e, { value }) => setGender(value)
+
     return (
         <Form widths={'equal'}>
             <Form.Group inline>
@@ -42,7 +44,8 @@ const PersonalDetailsForm = () => {
                     label={t('FORM.GENDER')}
                     options={genderOptions}
                     placeholder={t('FORM.GENDER_PLACEHOLDER')}
-                    value={'male'}
+                    value={gender}
+                    onChange={handleGenderSelect}
                     fluid/>
                 <Form.Input
                     label={t('FORM.EMAIL')}

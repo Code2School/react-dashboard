@@ -21,13 +21,17 @@ const Widget = ({ className, children, textAlign = 'left' }) => (
     </Card>
 );
 
-export const WidgetHeader = React.memo(({ className, style, children }) => (
-    <Card.Header
-        as={'h3'}
-        className={className}
-        style={style}>
-        {children}
-    </Card.Header>
+export const WidgetHeader = React.memo(({ className, style, children, headerAddition }) => (
+    <Card.Content
+        className={classes.headerLayout}>
+        <Card.Header
+            as={'h3'}
+            className={cx(className, classes.headerMain)}
+            style={style}>
+            {children}
+        </Card.Header>
+        <span>{headerAddition}</span>
+    </Card.Content>
 ));
 export const WidgetContent = React.memo(({ className, style, children }) => (
     <Card.Content

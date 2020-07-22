@@ -8,5 +8,7 @@
   "WIDGET.TOTAL_ESTIMATED": "Total Estimated",
   "WIDGET.DELIVERED_ORDERS": "Delivered Orders",
   "WIDGET.ONLINE_STORE_VISITORS": "Online Store Visitors",
-  "WIDGET.VISIT_SEPARATION": "Visit Separation"
+  "WIDGET.VISIT_SEPARATION": "Visit Separation",
+  "WIDGET.NOTIFICATIONS": "Notifications",
+  "WIDGET.VIEW_MORE": "View more"
 }

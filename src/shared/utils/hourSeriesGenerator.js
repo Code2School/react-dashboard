@@ -1,6 +1,5 @@
-let hourSeries = [];
-
 export const twelveHourGenerator = () => {
+    let hourSeries = [];
     for (let i = 0; i < 24; i++) {
         let midday = 'AM';
         let time = i + 1;

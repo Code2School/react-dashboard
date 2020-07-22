@@ -24,31 +24,21 @@ const GeneralSettingsForm = () => {
         { key: 'us-ny', value: 'us-ny', text: '(GMT-05:00) Eastern Time - New York' },
     ]
 
-    const [hourSeriesOption, setHourSeriesOption] = useState([]);
-    const [workFrom, setWorkFrom] = useState('');
-    const [workTo, setWorkTo] = useState('');
+    const [workFrom, setWorkFrom] = useState('8-AM');
+    const [workTo, setWorkTo] = useState('5-PM');
 
-    useEffect(() => {
-        const hourSeries = twelveHourGenerator();
-        const hourOption = hourSeries.map(({ key, time, midday }) => (
-            {
-                key,
-                value: `${time}-${midday}`,
-                text: `${time}:00 ${midday}`
-            }
-        ));
-        setHourSeriesOption(hourOption);
-        setWorkFrom('8-AM');
-        setWorkTo('5-PM');
-    }, []);
+    const hourSeries = twelveHourGenerator();
+    const hourSeriesOption = hourSeries.map(({ key, time, midday }) => (
+        {
+            key,
+            value: `${time}-${midday}`,
+            text: `${time}:00 ${midday}`
+        }
+    ));
 
-    const handleWorkFromSelect = (e, { value }) => {
-        setWorkFrom(value);
-    };
+    const handleWorkFromSelect = (e, { value }) => setWorkFrom(value);
 
-    const handleWorkToSelect = (e, { value }) => {
-        setWorkTo(value);
-    }
+    const handleWorkToSelect = (e, { value }) => setWorkTo(value);
 
     return (
         <Form widths={'equal'}>
